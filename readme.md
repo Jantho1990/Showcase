@@ -4,29 +4,10 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 > Still being developed!
 
-## Todos:
-    - get to 1.0
-        - ~add the admin section~
-        - ~create components for dropping in the view boxes~
-        - add sort order functionality within displays for trophies
-        - unit tests
-        - show trophies associated with a display on the show form
-        - show displays associated with a trophy on the show form
-        - automate including the assets in the test project
-        - ~add validation rule for checking template files~
-        - finish adding flash messages for CRUD
-        - Vue multiselect for trophy display select
-            - combine with sort order selection
-        - redo nav dropdowns to use scrollbars for large amounts
-    - 1.1
-        - Replace buttons with FontAwesome icons where appropriate
-        - add ability to use a custom auth guard
-        - add image uploader that takes care of uploading images to the CDN
-        - ~add way to mass-assign trophies to a display (instead of one at a time)~
-        - add Trophy Groups
-            - and the ability to assign all Trophy Group members to a Display
-        - add Display Groups
-            - and the ability to assign a new Trophy to all Displays in a group
+## [Projects](https://github.com/BrokerExchange/Showcase/projects):
+
+  - [ ] [Roadmap](https://github.com/BrokerExchange/Showcase/projects/1)
+
 
 ## Installation
 
@@ -37,8 +18,10 @@ composer require brokerexchange/showcase
 ```
 
 To include the assets, you have two options:
-    1. `@import "vendor/brokerexchange/showcase/resources/assets/build/public";` in your main stylesheet, which will include the styles as part of your app's compiled styles.
-    2. `php artisan vendor:publish --tag=showcase-assets` and link to `/vendor/showcase/public.css` in the `<head>`.
+
+  1. `@import "vendor/brokerexchange/showcase/resources/assets/build/public";` in your main stylesheet, which will include the styles as part of your app's compiled styles.
+    
+  2. `php artisan vendor:publish --tag=showcase-assets` and link to `/vendor/showcase/public.css` in the `<head>`.
 
 If you want to publish all the assets:
 ```
@@ -70,8 +53,8 @@ To update the test project with package changes:
 This will also dump composer's autoload and clear the Laravel cache and compiled views.
 
 Flags you can use:
-- `--migrations`: run database migrations
-- `--rundev`: run the package `npm run dev` before updating the test project
+  - `--migrations`: run database migrations
+  - `--rundev`: run the package `npm run dev` before updating the test project
 
 #### Authentication
 The test project generates Auth during the build. A default user is created with the test project:
