@@ -7,11 +7,16 @@
         {{csrf_field()}}
         <div class="form-group">
             <label for="name">Display Name</label>
-        <input class="form-control" type="text" name="name" value="{{old('name')}}">
+            <input class="form-control" type="text" name="name" value="{{old('name')}}">
         </div>
         <div class="form-group">
             <label for="component_view">Component View</label>
-        <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}">
+            {{-- <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}"> --}}
+            <select name="component_view">
+                @foreach($displayViews as $view)
+                <option value="{{ $view->name }}">{{ $view->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label for="default_trophy_component_view">Default Trophy Component View</label>

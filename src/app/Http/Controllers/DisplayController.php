@@ -3,9 +3,10 @@
 namespace Showcase\App\Http\Controllers;
 
 use Showcase\App\Display;
+use Showcase\App\Http\Requests\DisplayRequest;
 use Showcase\App\Trophy;
 use Illuminate\Http\Request;
-use Showcase\App\Http\Requests\DisplayRequest;
+use Showcase\Showcase;
 
 class DisplayController extends Controller
 {
@@ -26,7 +27,10 @@ class DisplayController extends Controller
      */
     public function create()
     {
-        return view('showcase::app.display.create', compact('trophies'));
+        $displayViews = Showcase::getViewFilenames('display');
+        // $trophyViews = Storage::files('trophies');
+        
+        return view('showcase::app.display.create', compact('trophies', 'displayViews'));
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace Showcase;
 
+use Illuminate\Support\Facades\Storage;
+
 class Showcase
 {
     /**
@@ -42,5 +44,28 @@ class Showcase
         }
         return file_exists(base_path() . "/resources/views/vendor/showcase/public/components/$type/$file.blade.php")
             ?: file_exists(__DIR__."/resources/views/public/components/$type/$file.blade.php");
+    }
+
+    /**
+     * Get all view filenames.
+     *
+     * @param string $type The type of view file being requested.
+     * 
+     * @return array
+     */
+    public static function getViewFilenames($type)
+    {
+        $sources = [
+            base_path() . "/resources/views/vendor/showcase/public/components/$type/",
+            __DIR__ . "/resources/views/public/components/$type/"
+        ];
+
+        $filenames = [];
+
+        foreach ($sources as $source) {
+            array_merge($filenames, Storage::files($source));
+        }
+
+        return $filenames;
     }
 }
