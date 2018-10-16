@@ -12,7 +12,7 @@
         <div class="form-group">
             <label for="component_view">Component View</label>
             {{-- <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}"> --}}
-            <select name="component_view">
+            <select class="form-control" name="component_view">
                 @foreach($displayViews as $view)
                 <option value="{{ $view }}">{{ $view }}</option>
                 @endforeach
