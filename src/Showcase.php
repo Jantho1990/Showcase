@@ -79,7 +79,7 @@ class Showcase
         return array_reduce(
             $filenames,
             function ($carry, $filename) use ($filenames) {
-                if (!array_search($filename, $carry)) {
+                if (array_search($filename, $carry) === false) {
                     $carry[] = $filename;
                 }
 
