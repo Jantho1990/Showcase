@@ -30,4 +30,13 @@ return [
     | Change the trophy description length maximum.
     */
     'description_length' => 55,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Route Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Sets the namespace for Showcase routes.
+    */
+    'route_namespace' => 'showcase',
 ];
