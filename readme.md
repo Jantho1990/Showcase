@@ -28,6 +28,13 @@ If you want to publish all the assets:
 php artisan vendor:publish --tag=showcase
 ```
 
+If you only want to publish specific pieces:
+```
+php artisan vendor:publish --tag=showcase-assets
+php artisan vendor:publish --tag=showcase-config
+php artisan vendor:publish --tag=showcase-views
+```
+
 > TODO: Finish this section and fix things so you don't have to use public/vendor
 
 ### Install the package development environment
@@ -118,6 +125,10 @@ Just target the Showcase selectors with your CSS to customize the styling. To ma
 
 ### Configuration
 There are some configuration options exposed for you in the config file `showcase.php`.
+- `table_prefix` sets the prefix used by Showcase tables
+- `middleware` sets what middleware Showcase routes go through (comma delimited)
+- `description_length` sets a character limit on the description field
+- `route_prefix` sets the prefix used for Showcase routes and named routes
 
 #### Table Prefix
 By default, all showcase tables are prefixed with `showcase_`. You may change this to whatever you desire.

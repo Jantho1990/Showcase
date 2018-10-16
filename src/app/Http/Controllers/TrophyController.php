@@ -52,7 +52,7 @@ class TrophyController extends Controller
         $trophy->displays()->detach();
         $trophy->displays()->attach($request->displays);
 
-        return redirect()->route('trophies.show', compact('trophy'));
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.trophies.show', compact('trophy'));
     }
 
     /**
@@ -98,7 +98,7 @@ class TrophyController extends Controller
 
         flash()->success('Trophy updated!');
 
-        return redirect()->route('trophies.show', compact('trophy'));
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.trophies.show', compact('trophy'));
     }
 
     /**
@@ -113,6 +113,6 @@ class TrophyController extends Controller
 
         $trophy->delete();
 
-        return redirect()->route('trophies.index');
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.trophies.index');
     }
 }

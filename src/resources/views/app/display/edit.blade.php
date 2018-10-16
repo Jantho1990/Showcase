@@ -5,7 +5,7 @@
 @section('content')
 <main class="col-md-6 showcase-display-main">
     <h1>Edit Display</h1>
-    <form action="{{route('displays.update', compact('display'))}}" method="POST">
+    <form action="{{route(config('showcase.route_prefix', 'showcase') . '.displays.update', compact('display'))}}" method="POST">
         {{method_field('PUT')}} {{csrf_field()}}
         <div class="form-group">
             <label for="name">Display Name</label>
