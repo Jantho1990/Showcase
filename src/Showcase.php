@@ -76,7 +76,7 @@ class Showcase
             $filenames = array_merge($filenames, $refinedFilenames);
         }
 
-        return array_reduce(
+        return array_filter(
             $filenames,
             function ($filename) use ($filenames) {
                 return !array_search($filename, $filenames);
