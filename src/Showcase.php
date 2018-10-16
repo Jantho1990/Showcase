@@ -76,7 +76,12 @@ class Showcase
             $filenames = array_merge($filenames, $refinedFilenames);
         }
 
-        return $filenames;
+        return array_reduce(
+            $filenames,
+            function ($filename) use ($filenames) {
+                return !array_search($filename, $filenames);
+            }
+        );
     }
 
     public static function files($directory)
