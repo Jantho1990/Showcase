@@ -1,5 +1,7 @@
-@extends('showcase::app.layouts.app') 
-@section('title', 'Edit Display') 
+@extends('showcase::app.layouts.app')
+
+@section('title', 'Edit Display')
+
 @section('content')
 <main class="col-md-6 showcase-display-main">
     <h1>Edit Display</h1>
@@ -11,11 +13,38 @@
         </div>
         <div class="form-group">
             <label for="component_view">Component View</label>
-            <input class="form-control" type="text" name="component_view" value="{{$display->component_view}}">
+            <select class="form-control" name="component_view">
+                @foreach($displayViews as $view)
+                <option
+                    value="{{ $view }}" 
+                    {{ 
+                        old('component_view', $display->component_view) === $view 
+                            ? 'selected'
+                            : ''
+                    }}
+                >
+                    {{ $view }}
+                </option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label for="default_trophy_component_view">Default Trophy Component View</label>
-            <input class="form-control" type="text" name="default_trophy_component_view" value="{{$display->default_trophy_component_view}}">
+            <select class="form-control" name="default_trophy_component_view">
+                @foreach($trophyViews as $view)
+                <option
+                    value="{{ $view }}"
+                    {{
+                        old(
+                            'default_trophy_component_view',
+                            $display->default_trophy_component_view
+                        ) === $view 
+                            ? 'selected'
+                            : ''
+                    }}
+                >{{ $view }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group form-check">
             <input class="form-check-input" type="checkbox" name="force_trophy_default" value="1" {{$display->force_trophy_default ? 'checked' : ''}}>
@@ -32,7 +61,4 @@
         <button class="btn btn-success btn-block" type="submit">Update</button>
     </form>
 </main>
-
-
-
 @stop

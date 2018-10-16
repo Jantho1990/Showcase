@@ -27,7 +27,7 @@ sed -i '' 's/Laravel\\Tinker\\TinkerServiceProvider::class,/Laravel\\Tinker\\Tin
         Laracasts\\Flash\\FlashServiceProvider::class,/' ./config/app.php
 
 cp ../UsersTableSeeder.php ./database/seeds/
-composer require brokerexchange/showcase=dev-feature/1.0
+composer require brokerexchange/showcase=dev-feature/views-list-dropdown
 composer dump-autoload
 echo "Pre auth"
 php artisan make:auth
