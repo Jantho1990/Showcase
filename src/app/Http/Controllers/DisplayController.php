@@ -73,7 +73,13 @@ class DisplayController extends Controller
      */
     public function edit(Display $display)
     {
-        return view('showcase::app.display.edit', compact('display', 'trophies'));
+        $displayViews = Showcase::getViewFilenamesBasic('display');
+        $trophyViews = Showcase::getViewFilenamesBasic('trophy');
+
+        return view(
+            'showcase::app.display.edit',
+            compact('display', 'trophies', 'displayViews', 'trophyViews')
+        );
     }
 
     /**
