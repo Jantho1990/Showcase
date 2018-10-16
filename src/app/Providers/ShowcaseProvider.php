@@ -26,10 +26,18 @@ class ShowcaseProvider extends ServiceProvider
             __DIR__.'/../../resources/assets/build' => public_path('vendor/showcase'),          
             __DIR__.'/../../resources/views' => resource_path('/views/vendor/showcase'),
         ], 'showcase');
+        
+        $this->publishes([
+            __DIR__.'/../../config.php' => config_path('showcase.php')
+        ], 'showcase-config');
 
         $this->publishes([
             __DIR__.'/../../resources/assets/build' => public_path('vendor/showcase'), 
         ], 'showcase-assets');
+
+        $this->publishes([
+            __DIR__.'/../../resources/views' => resource_path('/views/vendor/showcase')
+        ], 'showcase-views');
 
         Blade::directive('showcaseDisplay', function ($display) {
             return "<?php

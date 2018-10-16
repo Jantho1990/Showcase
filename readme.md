@@ -28,6 +28,13 @@ If you want to publish all the assets:
 php artisan vendor:publish --tag=showcase
 ```
 
+If you only want to publish specific pieces:
+```
+php artisan vendor:publish --tag=showcase-assets
+php artisan vendor:publish --tag=showcase-config
+php artisan vendor:publish --tag=showcase-views
+```
+
 > TODO: Finish this section and fix things so you don't have to use public/vendor
 
 ### Install the package development environment
