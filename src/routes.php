@@ -1,6 +1,9 @@
 <?php
 
-Route::prefix('showcase')->middleware(config('showcase.middleware', ['web', 'auth']))->group(function () {
+Route::group([
+    'middleware' => config('showcase.middleware', ['web', 'auth']),
+    'prefix' => 'showcase'
+], function () {
     Route::get('/', function () {
         return redirect()->route('displays.index');
     })->name('showcase');
