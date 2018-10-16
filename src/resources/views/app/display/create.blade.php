@@ -14,7 +14,7 @@
             {{-- <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}"> --}}
             <select name="component_view">
                 @foreach($displayViews as $view)
-                <option value="{{ $view->name }}">{{ $view->name }}</option>
+                <option value="{{ $view }}">{{ $view }}</option>
                 @endforeach
             </select>
         </div>

@@ -63,9 +63,23 @@ class Showcase
         $filenames = [];
 
         foreach ($sources as $source) {
-            array_merge($filenames, Storage::files($source));
+            $filenames = array_merge($filenames, self::files($source));
         }
 
         return $filenames;
+    }
+
+    public static function files($directory)
+    {
+        $glob = glob($directory.DIRECTORY_SEPARATOR.'*');
+        if ($glob === false) {
+            return [];
+        }
+        // To get the appropriate files, we'll simply glob the directory and filter
+        // out any "files" that are not truly files so we do not end up with any
+        // directories in our list, but only true files within the directory.
+        return array_filter($glob, function ($file) {
+            return filetype($file) == 'file';
+        });
     }
 }
