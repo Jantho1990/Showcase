@@ -4,6 +4,6 @@ Route::namespace('showcase')->middleware(config('showcase.middleware', ['web', '
     Route::get('/showcase', function () {
         return redirect()->route('displays.index');
     })->name('showcase');
-    Route::resource('displays', 'Showcase\App\Http\Controllers\DisplayController');
-    Route::resource('trophies', 'Showcase\App\Http\Controllers\TrophyController');
+    Route::resource('displays', '\Showcase\App\Http\Controllers\DisplayController');
+    Route::resource('trophies', '\Showcase\App\Http\Controllers\TrophyController');
 });
