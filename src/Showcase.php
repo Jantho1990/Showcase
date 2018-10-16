@@ -102,7 +102,7 @@ class Showcase
             function ($filename) {
                 return str_replace('.blade.php', '', $filename);
             },
-            self::getViewFileanmes($type)
+            self::getViewFilenames($type)
         );
     }
 
