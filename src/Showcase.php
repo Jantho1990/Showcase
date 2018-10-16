@@ -76,11 +76,16 @@ class Showcase
             $filenames = array_merge($filenames, $refinedFilenames);
         }
 
-        return array_filter(
+        return array_reduce(
             $filenames,
-            function ($filename) use ($filenames) {
-                return !array_search($filename, $filenames);
-            }
+            function ($carry, $filename) use ($filenames) {
+                if (!array_search($filename, $carry)) {
+                    $carry[] = $filename;
+                }
+
+                return $carry;
+            },
+            []
         );
     }
 
