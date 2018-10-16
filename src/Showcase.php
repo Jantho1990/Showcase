@@ -73,7 +73,7 @@ class Showcase
                 $rawFilenames
             );
 
-            $filenames = array_merge($filenames, $refinedFileNames);
+            $filenames = array_merge($filenames, $refinedFilenames);
         }
 
         return $filenames;
