@@ -63,7 +63,17 @@ class Showcase
         $filenames = [];
 
         foreach ($sources as $source) {
-            $filenames = array_merge($filenames, self::files($source));
+            $rawFilenames = self::files($source);
+
+            $refinedFilenames = array_map(
+                function ($filename) {
+                    $filenameArray = explode(DIRECTORY_SEPARATOR, $filename);
+                    return $filenameArray[count($filenameArray) - 1];
+                },
+                $rawFilenames
+            );
+
+            $filenames = array_merge($filenames, $refinedFileNames);
         }
 
         return $filenames;
