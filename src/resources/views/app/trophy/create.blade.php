@@ -7,7 +7,12 @@
         {{csrf_field()}}
         <div class="form-group">
             <label for="name">Component View</label>
-            <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}">
+            {{-- <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}"> --}}
+            <select class="form-control" name="component_view">
+                @foreach($trophyViews as $view)
+                <option value="{{ $view }}" {{ old('component_view') === $view ? 'selected' : '' }}>{{ $view }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label for="name">Trophy Name</label>

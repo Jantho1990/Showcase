@@ -11,7 +11,6 @@
         </div>
         <div class="form-group">
             <label for="component_view">Component View</label>
-            {{-- <input class="form-control" type="text" name="component_view" value="{{$display->component_view}}"> --}}
             <select class="form-control" name="component_view">
                 @foreach($displayViews as $view)
                 <option
@@ -29,7 +28,6 @@
         </div>
         <div class="form-group">
             <label for="default_trophy_component_view">Default Trophy Component View</label>
-            {{-- <input class="form-control" type="text" name="default_trophy_component_view" value="{{$display->default_trophy_component_view}}"> --}}
             <select class="form-control" name="default_trophy_component_view">
                 @foreach($trophyViews as $view)
                 <option
