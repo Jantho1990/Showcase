@@ -19,7 +19,12 @@
         </div>
         <div class="form-group">
             <label for="default_trophy_component_view">Default Trophy Component View</label>
-        <input class="form-control" type="text" name="default_trophy_component_view" value="{{old('default_trophy_component_view')}}">
+            {{-- <input class="form-control" type="text" name="default_trophy_component_view" value="{{old('default_trophy_component_view')}}"> --}}
+            <select class="form-control" name="default_trophy_component_view">
+                @foreach($trophyViews as $view)
+                <option value="{{ $view }}">{{ $view }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group form-check">
         <input class="form-check-input" type="checkbox" name="force_trophy_default" value="1" {{old('force_trophy_default') !== '1' ?: 'checked'}}>
