@@ -7,7 +7,7 @@ Route::group([
 ], function () {
     Route::get('/', function () {
         return redirect()->route('displays.index');
-    })->name('showcase');
+    })->name('home');
     Route::resource('displays', '\Showcase\App\Http\Controllers\DisplayController');
     Route::resource('trophies', '\Showcase\App\Http\Controllers\TrophyController');
 });
