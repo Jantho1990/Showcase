@@ -1,7 +1,7 @@
 <?php
 
 Route::prefix('showcase')->middleware(config('showcase.middleware', ['web', 'auth']))->group(function () {
-    Route::get('showcase', function () {
+    Route::get('/', function () {
         return redirect()->route('displays.index');
     })->name('showcase');
     Route::resource('displays', '\Showcase\App\Http\Controllers\DisplayController');
