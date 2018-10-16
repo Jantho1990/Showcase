@@ -5,7 +5,7 @@
 @section('content')
 <main class="col-md-6 showcase-trophy-main">
     <h1>Edit Trophy</h1>
-    <form action="{{route('trophies.update', compact('display', 'trophy'))}}" method="post">
+    <form action="{{route(config('showcase.route_prefix', 'showcase') . '.trophies.update', compact('display', 'trophy'))}}" method="post">
         {{csrf_field()}} {{method_field('PUT')}}
         <div class="form-group">
             <label for="name">Component View</label>

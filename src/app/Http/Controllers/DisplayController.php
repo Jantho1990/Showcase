@@ -51,7 +51,7 @@ class DisplayController extends Controller
         $display->trophies()->detach();
         $display->trophies()->attach($request->trophies);
 
-        return redirect()->route('displays.show', compact('display'));
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.displays.show', compact('display'));
     }
 
     /**
@@ -98,7 +98,7 @@ class DisplayController extends Controller
         $display->trophies()->detach();
         $display->trophies()->attach($request->trophies);
 
-        return redirect()->route('displays.show', compact('display'));
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.displays.show', compact('display'));
     }
 
     /**
@@ -113,6 +113,6 @@ class DisplayController extends Controller
 
         $display->delete();
 
-        return redirect()->route('displays.index');
+        return redirect()->route(config('showcase.route_prefix', 'showcase') . '.displays.index');
     }
 }

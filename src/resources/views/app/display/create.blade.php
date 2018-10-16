@@ -5,7 +5,7 @@
 @section('content')
 <main class="col-sm-6 showcase-display-main">
     <h1>Create New Display</h1>
-    <form action="{{route('displays.store')}}" method="POST">
+    <form action="{{route(config('showcase.route_prefix', 'showcase') . '.displays.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group">
             <label for="name">Display Name</label>

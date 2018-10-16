@@ -6,7 +6,7 @@ Route::group([
     'as' => config('showcase.route_prefix', 'showcase') . '.'
 ], function () {
     Route::get('/', function () {
-        return redirect()->route('displays.index');
+        return redirect()->route('showcase.displays.index');
     })->name('home');
     Route::resource('displays', '\Showcase\App\Http\Controllers\DisplayController');
     Route::resource('trophies', '\Showcase\App\Http\Controllers\TrophyController');
