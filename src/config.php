@@ -33,10 +33,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Route Namespace
+    | Route Prefix
     |--------------------------------------------------------------------------
     |
-    | Sets the namespace for Showcase routes.
+    | Sets the prefix for Showcase routes.
     */
-    'route_namespace' => 'showcase',
+    'route_prefix' => 'showcase',
 ];

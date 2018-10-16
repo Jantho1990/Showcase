@@ -2,7 +2,7 @@
 
 Route::group([
     'middleware' => config('showcase.middleware', ['web', 'auth']),
-    'prefix' => 'showcase'
+    'prefix' => config('showcase.route_prefix', 'showcase')
 ], function () {
     Route::get('/', function () {
         return redirect()->route('displays.index');
