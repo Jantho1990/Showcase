@@ -27,8 +27,8 @@ class DisplayController extends Controller
      */
     public function create()
     {
-        $displayViews = Showcase::getViewFilenames('display');
-        $trophyViews = Showcase::getViewFilenames('trophy');
+        $displayViews = Showcase::getViewFilenamesBasic('display');
+        $trophyViews = Showcase::getViewFilenamesBasic('trophy');
         
         return view(
             'showcase::app.display.create',

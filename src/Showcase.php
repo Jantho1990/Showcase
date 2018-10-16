@@ -48,12 +48,12 @@ class Showcase
 
     /**
      * Get all view filenames.
-     *
-     * @param string $type The type of view file being requested.
      * 
+     * @param string $type The type of view file being requested.
+     *
      * @return array
      */
-    public static function getViewFilenames($type)
+    protected static function getViewFilenames($type)
     {
         $sources = [
             base_path() . "/resources/views/vendor/showcase/public/components/$type/",
@@ -63,7 +63,7 @@ class Showcase
         $filenames = [];
 
         foreach ($sources as $source) {
-            $rawFilenames = self::files($source);
+            $rawFilenames = self::_files($source);
 
             $refinedFilenames = array_map(
                 function ($filename) {
@@ -89,7 +89,31 @@ class Showcase
         );
     }
 
-    public static function files($directory)
+    /**
+     * Get all view filenames sans extension.
+     *
+     * @param string $type The type of view file being requested.
+     *
+     * @return array
+     */
+    public static function getViewFilenamesBasic($type)
+    {
+        return array_map(
+            function ($filename) {
+                return str_replace('.blade.php', '', $filename);
+            },
+            self::getViewFileanmes($type)
+        );
+    }
+
+    /**
+     * Get all files in a directory.
+     *
+     * @param string $directory The path to the directory.
+     *
+     * @return array
+     */
+    private static function _files($directory)
     {
         $glob = glob($directory.DIRECTORY_SEPARATOR.'*');
         if ($glob === false) {
