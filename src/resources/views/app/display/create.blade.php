@@ -1,5 +1,7 @@
-@extends('showcase::app.layouts.app') 
-@section('title', 'Create Display') 
+@extends('showcase::app.layouts.app')
+
+@section('title', 'Create Display')
+
 @section('content')
 <main class="col-sm-6 showcase-display-main">
     <h1>Create New Display</h1>

@@ -1,5 +1,7 @@
-@extends('showcase::app.layouts.app') 
-@section('title', 'Edit Display') 
+@extends('showcase::app.layouts.app')
+
+@section('title', 'Edit Display')
+
 @section('content')
 <main class="col-md-6 showcase-display-main">
     <h1>Edit Display</h1>
@@ -59,7 +61,4 @@
         <button class="btn btn-success btn-block" type="submit">Update</button>
     </form>
 </main>
-
-
-
 @stop

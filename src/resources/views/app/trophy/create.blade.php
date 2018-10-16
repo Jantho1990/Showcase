@@ -1,5 +1,7 @@
-@extends('showcase::app.layouts.app') 
-@section('title', 'Create Trophy') 
+@extends('showcase::app.layouts.app')
+
+@section('title', 'Create Trophy')
+
 @section('content')
 <main class="col-md-6 showcase-trophy-main">
     <h1>Create New Trophy</h1>
@@ -41,5 +43,4 @@
         <button class="btn btn-success btn-block" type="submit">Save</button>
     </form>
 </main>
-
 @stop
