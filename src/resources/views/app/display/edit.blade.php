@@ -15,8 +15,8 @@
                 @foreach($displayViews as $view)
                 <option
                     value="{{ $view }}" 
-                    {{
-                        (old('component_view') === $view || $display->component_view === $view)
+                    {{ 
+                        old('component_view', $display->component_view) === $view 
                             ? 'selected'
                             : ''
                     }}
@@ -33,7 +33,10 @@
                 <option
                     value="{{ $view }}"
                     {{
-                        (old('default_trophy_component_view') === $view || $display->default_trophy_component_view === $view)
+                        old(
+                            'default_trophy_component_view',
+                            $display->default_trophy_component_view
+                        ) === $view 
                             ? 'selected'
                             : ''
                     }}

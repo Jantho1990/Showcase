@@ -11,9 +11,9 @@
             <select class="form-control" name="component_view">
                 @foreach($trophyViews as $view)
                 <option
-                    value="{{ $view }}" 
-                    {{
-                        (old('component_view') === $view || $trophy->component_view === $view)
+                    value="{{ $view }}"
+                    {{ 
+                        old('component_view', $trophy->component_view) === $view 
                             ? 'selected'
                             : ''
                     }}
